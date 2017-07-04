@@ -1,4 +1,4 @@
--- Mini Porjeto Jogo Pong em Lua - Love2D -
+-- Mini Projeto Jogo Pong em Lua - Love2D -
 -- Aluno Djair Vieira C de Sousa
 -- Disciplina: Jogos   * 8 periodo * Curso: Bacharelado em Sistemas de Informação
 -- FAculdade: Facol Faculdade Osman Lins - Vitória Pe
