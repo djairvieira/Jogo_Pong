@@ -11,7 +11,7 @@
 function love.load()
     world = love.physics.newWorld(0, 0, true)
 
-		-- definição dos elementos da bola. painel 1 e painel 2 limite de topo limite do botao, fonte e variaveis...
+		-- definição dos elementos da tela "body"
     bolinha = {}
         bolinha.b = love.physics.newBody(world, 400, 300, "dynamic")
         bolinha.b:setMass(1)
@@ -61,15 +61,15 @@ function love.load()
 end
 
 function love.update(dt)
-    if not pausar then -- Condição para pausar o jogo
-	world:update(dt)
+    if not pausar then                      -- Condição para pausar o jogo dentro da function love.uptade
+	  world:update(dt)
 
-    if love.keyboard.isDown("w") then		-- Condição para w movimentação da barrinha
+    if love.keyboard.isDown("w") then		     -- Condição para w movimentação da barrinha
        painel1.b:setLinearVelocity(0, -400)
-    elseif love.keyboard.isDown("s") then   -- Condição para s movimentação da barrinha
+    elseif love.keyboard.isDown("s") then    -- Condição para s movimentação da barrinha
         painel1.b:setLinearVelocity(0, 400)
     end
-    if love.keyboard.isDown("up") then		-- Condição para up movimentação da barrinha
+    if love.keyboard.isDown("up") then		   -- Condição para up movimentação da barrinha
         painel2.b:setLinearVelocity(0, -400)
     elseif love.keyboard.isDown("down") then -- Condição para down movimentação da barrinha
         painel2.b:setLinearVelocity(0, 400)
@@ -172,7 +172,7 @@ function newRound()
     firstLaunch = true
 end
 
---A função keyreleased é disparada quando uma tecla do teclado é liberada.
+-- A função keyreleased é disparada quando uma tecla do teclado é liberada.
 function love.keyreleased(key)
     if (key == "w") or (key == "s") then
         painel1.b:setLinearVelocity(0,0)
@@ -181,7 +181,7 @@ function love.keyreleased(key)
     if (key == "up") or (key == "down") then
         painel2.b:setLinearVelocity(0,0)
     end
-	-- Condição para pausar o jogo atraves da tecla P do teclado
+-- Condição se a tecla "p" for acionada eu quero que todo o jogo pare
 	 if (key == "p") then
 		   painel2.b:setLinearVelocity(0,0)
 		   pausar = not pausar
