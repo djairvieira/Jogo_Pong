@@ -165,9 +165,7 @@ function love.draw()
     ponto = pontuacao1.." "..pontuacao2	    -- resultado da pontuação
 
 
-    --body...
   end
---end
 
 function love.update(dt)
 
